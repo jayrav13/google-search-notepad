@@ -10,7 +10,13 @@ $(document).ready(function() {
 
 chrome.runtime.onMessage.addListener(
 	function(request, sender, sendResponse) {
-		console.log(request.message);
+		if(request.message != "notepad") {
+			console.log("Error!");
+		}
+		else {
+			console.log("Message successfully arrives!");
+			$("#resultStats").html("<textarea style=\"position:fixed\" rows=\"3\" cols=\"80\" placeholder=\"Welcome to your Google Notepad!\"></textarea>");
+		}
 	}
 );
 
