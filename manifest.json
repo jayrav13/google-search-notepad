@@ -1,0 +1,28 @@
+{
+	"name": "Google Notepad",
+	"version": "1.0",
+	"manifest_version": 2, 
+	"description": "Add a small notepad to the Google Search Results",
+	"browser_action": {
+		"name": "Add Notepad to Google"
+	},
+	"background": {
+		"scripts": [ 
+			"jquery.min.js", 
+			"background.js" 
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.google.com/*"
+			],
+			"js": [
+				"jquery.min.js", "content.js"
+			]
+		}
+	],
+	"permissions": [
+		"tabs"
+	]
+}
